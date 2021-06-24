@@ -1,15 +1,38 @@
-import './App.css';
+import './styling/App.css';
 import React, {useState} from 'react';
-import Days from './components/Days'
+import Days from './components/Days';
+import Navbar from './components/Navbar';
+
 
 function App() {
+
+   // get location
+  //coordinates
+  const [lat, setLat] = useState(null);
+  const [lng, setLng] = useState(null);
+
+  // function to get the location
+  const getLocation = () => {
+    if (!navigator.geolocation) {
+    } else {
+        navigator.geolocation.getCurrentPosition((position) => {
+        setLat(position.coords.latitude);
+        setLng(position.coords.longitude);
+        console.log("The lat is " + lat);
+        console.log("The lng is " + lng);
+      });
+    }};
+
+    // get location
+    getLocation();
+  
 
    // temp and desc
    const [temp, setTemp] = useState(null);
    const [desc, setDesc] = useState(null);
  
    // stores our api key
-   const api_key = "e36c452edaae20e4ce9420dab5d7e360"
+   const api_key = "dc857f068b2ea1e49b1f822db8641377"
  
    // fetch data from this url
    async function fetchWeatherJSON(){
@@ -25,45 +48,19 @@ function App() {
        console.log("desc" + desc);
    } 
 
-  //coordinates
-  const [lat, setLat] = useState(null);
-  const [lng, setLng] = useState(null);
-  const [status, setStatus] = useState(null);
-
-  // function to get the location
-  const getLocation = () => {
-    if (!navigator.geolocation) {
-      setStatus('Geolocation is not supported by your browser');
-    } else {
-      setStatus('Locating...');
-      navigator.geolocation.getCurrentPosition((position) => {
-        setStatus(null);
-        setLat(position.coords.latitude);
-        setLng(position.coords.longitude);
-
-        console.log("The lat is " + lat);
-        console.log("The lng is " + lng);
-        // call our get weather for current location
-        if(lat && lng != null){
-          fetchWeatherJSON();
-        }
-        
-      }, () => {
-        console.log(status);    
-        setStatus('Unable to retrieve your location');
-      });
+    // function to get weather for current day
+    // call our get weather for current location
+    if(lat && lng != null){
+      fetchWeatherJSON();
     }
-  }
 
 
+  
   return (
     <div className="App">
-      <button onClick={getLocation}> Weather for my location!</button>
-      <h1>Coordinates</h1>
-      <p>Latitude: {lat}</p>
-      <p>Longitude: {lng}</p>
-      <p>{status}</p>
+      <Navbar />
       <Days lng = {lng} lat={lat} temp={temp} desc={desc} />
+
     </div>
   );
 }
