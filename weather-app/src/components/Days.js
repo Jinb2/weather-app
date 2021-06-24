@@ -1,14 +1,17 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Day from './Day';
+import {getDate} from '../utils/date.js'
+import '../styling/home.css';
 
 const Days = (props) => {
 
-        
-        
-        // returns component
+        // get date
+        const date = getDate();
+
+
         return(
         <div>
-            <h1>Weather Forecast today.</h1>
+            <h1>{date}</h1>
             <Day temp={props.temp} desc={props.desc}/>
             
         </div>

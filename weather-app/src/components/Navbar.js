@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styling/Navbar.css';
+import '../styling/navbar.css';
 
 
 const Navbar = () => {
@@ -10,7 +10,7 @@ const Navbar = () => {
                 Home
             </li>
             <li>
-            Weather for Week
+            Weather for week
             </li>
             <li>
             Weathermaps
