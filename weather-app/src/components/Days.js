@@ -9,7 +9,7 @@ const Days = (props) => {
         const date = getDate();
 
         return(
-        <div>
+        <div className="days">
             <h1>{date}</h1>
             <Day temp={props.temp} desc={props.desc}/>
         </div>

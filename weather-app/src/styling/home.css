@@ -1,7 +1,8 @@
-h1{
-    font-size: 4em;
+h1,h2{
+    font-size: 28px;
 }
 
-h2{
-    font-size: 3em;
+
+.days{
+    padding-top: 10%;
 }

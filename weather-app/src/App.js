@@ -64,7 +64,7 @@ function App() {
     <div className="App">
       <Navbar />
       <Days lng = {lng} lat={lat} temp={temp} desc={desc} />
-      <Clock/>
+      <Clock />
     </div>
   );
 }
