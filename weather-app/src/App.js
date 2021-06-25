@@ -4,7 +4,6 @@ import Days from './components/Days';
 import Navbar from './components/Navbar';
 import Clock from './components/Clock';
 
-
 function App() {
 
   // lat lng coordinates
@@ -43,7 +42,6 @@ function App() {
       setDesc(json['weather'][0]['description']);
     }   
 
-
    // every minute update the weather
   useEffect(() => {
 
@@ -62,7 +60,6 @@ function App() {
     return () => clearInterval(interval);
     });
   
-
   return (
     <div className="App">
       <Navbar />

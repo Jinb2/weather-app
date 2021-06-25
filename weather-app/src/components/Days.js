@@ -8,12 +8,10 @@ const Days = (props) => {
         // get date
         const date = getDate();
 
-
         return(
         <div>
             <h1>{date}</h1>
             <Day temp={props.temp} desc={props.desc}/>
-            
         </div>
     );
 };
