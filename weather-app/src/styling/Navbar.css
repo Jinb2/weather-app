@@ -2,8 +2,11 @@
     text-align: center;
     color: white;
     font-size: 25px;
-    padding-top: 1%;
-    padding-bottom: 1%;
+}
+
+a{
+    text-decoration: none;
+    color:white;
 }
 
 ul{

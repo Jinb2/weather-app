@@ -1,8 +1,6 @@
-h1,h2{
+.home{
+    padding-top: 8%;
     font-size: 28px;
 }
 
 
-.days{
-    padding-top: 10%;
-}

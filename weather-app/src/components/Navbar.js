@@ -6,13 +6,13 @@ const Navbar = () => {
     <nav className="navbar">
         <ul>
             <li>
-                Home
+            <a href="https://www.youtube.com/watch?v=umS8wfT7M2I">Home</a>
             </li>
             <li>
-            Weather for week
+            <a href="https://www.youtube.com/watch?v=umS8wfT7M2I">Weather for week</a>
             </li>
             <li>
-            Weathermaps
+            <a href="https://www.youtube.com/watch?v=umS8wfT7M2I">Weathermaps</a>
             </li>
         </ul>
     </nav>
