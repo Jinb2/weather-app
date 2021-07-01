@@ -1,19 +1,26 @@
 import React from 'react';
 import '../styling/navbar.css';
+import {Link} from 'react-router-dom';
 
 const Navbar = () => {
     return (
     <nav className="navbar">
         <ul>
+            <Link to="/">
             <li>
-            <a href="https://www.youtube.com/watch?v=umS8wfT7M2I">Home</a>
+                Home
             </li>
+            </Link>
+            <Link to="/week">
             <li>
-            <a href="https://www.youtube.com/watch?v=umS8wfT7M2I">Weather for week</a>
+            Weather for week
             </li>
+            </Link>
+            <Link to="/weathermaps">
             <li>
-            <a href="https://www.youtube.com/watch?v=umS8wfT7M2I">Weathermaps</a>
+            Weathermaps
             </li>
+            </Link>
         </ul>
     </nav>
     )

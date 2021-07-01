@@ -64,11 +64,13 @@ const Home = () => {
      const date = getDate();
 
     return(
+      <div>
         <div class="home">
         <h1>{date}</h1>
         <h2> {temp} <span>&#8457;</span></h2>
         <h2> {desc} </h2>
         <Clock />
+        </div>
         </div>
     )
 }
