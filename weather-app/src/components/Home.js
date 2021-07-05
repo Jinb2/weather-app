@@ -65,7 +65,7 @@ const Home = () => {
 
     return(
       <div>
-        <div class="home">
+        <div className="home">
         <h1>{date}</h1>
         <h2> {temp} <span>&#8457;</span></h2>
         <h2> {desc} </h2>
