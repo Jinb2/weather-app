@@ -17,3 +17,4 @@ export const getDate = () => {
 
     return today;
 }
+

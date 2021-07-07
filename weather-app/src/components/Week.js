@@ -1,4 +1,4 @@
-import {React, useState} from 'react';
+import {React, useState, useEffect} from 'react';
 import '../styling/week.css';
 const Week = () => {
 
@@ -13,8 +13,6 @@ const Week = () => {
            navigator.geolocation.getCurrentPosition((position) => {
            setLat(position.coords.latitude);
            setLng(position.coords.longitude);
-           console.log("The lat is " + lat);
-           console.log("The lng is " + lng);
          });
        }};
    
@@ -22,10 +20,9 @@ const Week = () => {
      getLocation();
    // states for the current and 7 day forecast
   // temp and rain percentages
-  const [day1, setDay1] = useState(null);
-  const [temp1, setTemp1] = useState(null);
-  const [rain1,setRain1] = useState(null);
+  const [weather, setWeather] = useState([]);
 
+  /*
   const [day2, setDay2] = useState(null);
   const [temp2, setTemp2] = useState(null);
   const [rain2,setRain2] = useState(null);
@@ -49,23 +46,42 @@ const Week = () => {
   const [day7, setDay7] = useState(null);
   const [temp7, setTemp7] = useState(null);
   const [rain7, setRain7] = useState(null);
+  
+  */
 
   const api_key = "dc857f068b2ea1e49b1f822db8641377"
- 
+  
+  //
+  const abortController = new AbortController();
+  const signal = abortController.signal;
+
   // fetch data from this url
   async function fetchWeatherJSON(){
       // wait for promise
       // example https://api.openweathermap.org/data/2.5/onecall?lat=40.74&lon=-73.82&exclude=hourly,minutely&units=imperial&appid=dc857f068b2ea1e49b1f822db8641377
-      const response = await fetch("https://api.openweathermap.org/data/2.5/onecall?lat="+lat+"&lon="+lng+"&exclude=hourly,minutely&units=imperial&appid="+api_key);
+      const response = await fetch("https://api.openweathermap.org/data/2.5/onecall?lat="+lat+"&lon="+lng+"&exclude=hourly,minutely&units=imperial&appid="+api_key, {signal: signal});
       const json = await response.json();
 
-      setDay1(json["daily"][0]["dt"]);
-    
+      // d1.toLocaleString("default", { weekday: "short" })
+      const information = {"dt": json["daily"][0]["dt"]*1000, "temp" : json["daily"][0]["temp"]["day"], "rain" : json["daily"][0]["rain"]};
+      setWeather(information);
     }   
 
+    // clean up resources after unmount
+    useEffect(() => {
+      if (lat && lng != null) {
+        fetchWeatherJSON();
+      }
+      return function cleanp(){
+        abortController.abort();
+      }; 
+  });
+
+    // TODO: setup and format information better.
+  
     return( 
-        <div>
-           
+        <div className="week">
+           {weather["dt"]}
         </div>
 
     )
