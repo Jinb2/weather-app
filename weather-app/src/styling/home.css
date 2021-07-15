@@ -1,17 +1,23 @@
+
 .home{
-    font-size: 28px;
-    background-image: url("../media/forecast-bg.jpg");
     background-repeat: no-repeat;
-    text-align: center;
-    font-family: 'Open Sans', sans-serif;
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
     width: 100vw;
-    height: 100vh;
+    padding-left: 40%;
+    z-index: 2;
+    color: white;
+    font-weight: 700;
+    padding-top: 5%;
 }
 
 h1{
+    font-size: 32px;
+    z-index: 2;
     margin-top: 0;
-    padding-top: 10%;
 }
 
-
+.grid-container{
+    list-style: none;
+}
 

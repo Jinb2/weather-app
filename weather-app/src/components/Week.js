@@ -44,41 +44,56 @@ const Week = () => {
 
     setWeather([
       {
-        dt: json["daily"][0]["dt"] * 1000,
-        temp: json["daily"][0]["temp"]["day"],
-        rain: json["daily"][0]["rain"],
+        dt: json["current"]["dt"] * 1000,
+        temp: json["current"]["temp"],
+        rain: json["current"]["weather"][0]["description"],
+        icon: json["current"]["weather"][0]["icon"],
+        humidity: json["current"]["humidity"]
       },
       {
         dt: json["daily"][1]["dt"] * 1000,
         temp: json["daily"][1]["temp"]["day"],
-        rain: json["daily"][1]["rain"],
+        rain: json["daily"][1]["weather"][0]["description"],
+        icon: json["daily"][1]["weather"][0]["icon"],
+        humidity: json["daily"][1]["humidity"]
       },
       {
         dt: json["daily"][2]["dt"] * 1000,
         temp: json["daily"][2]["temp"]["day"],
-        rain: json["daily"][2]["rain"],
+        rain: json["daily"][2]["weather"][0]["description"],
+        icon: json["daily"][2]["weather"][0]["icon"],
+        humidity: json["daily"][2]["humidity"]
       },
       {
         dt: json["daily"][3]["dt"] * 1000,
         temp: json["daily"][3]["temp"]["day"],
-        rain: json["daily"][3]["rain"],
+        rain: json["daily"][3]["weather"][0]["description"],
+        icon: json["daily"][3]["weather"][0]["icon"],
+        humidity: json["daily"][3]["humidity"]
       },
       {
         dt: json["daily"][4]["dt"] * 1000,
         temp: json["daily"][4]["temp"]["day"],
-        rain: json["daily"][4]["rain"],
+        rain: json["daily"][4]["weather"][0]["description"],
+        icon: json["daily"][4]["weather"][0]["icon"],
+        humidity: json["daily"][4]["humidity"]
       },
       {
         dt: json["daily"][5]["dt"] * 1000,
         temp: json["daily"][5]["temp"]["day"],
-        rain: json["daily"][5]["rain"],
+        rain: json["daily"][5]["weather"][0]["description"],
+        icon: json["daily"][5]["weather"][0]["icon"],
+        humidity: json["daily"][5]["humidity"]
       },
       {
         dt: json["daily"][6]["dt"] * 1000,
         temp: json["daily"][6]["temp"]["day"],
-        rain: json["daily"][6]["rain"],
+        rain: json["daily"][6]["weather"][0]["description"],
+        icon: json["daily"][6]["weather"][0]["icon"],
+        humidity: json["daily"][6]["humidity"]
       },
     ]);
+  
   }
 
   // limit our async calls
