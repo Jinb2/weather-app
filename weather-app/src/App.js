@@ -1,6 +1,7 @@
 import React from 'react';
 import Home from './components/Home';
 import Week from './components/Week';
+import WeatherMaps from './components/WeatherMaps';
 import video from './media/home-bg.mp4';
 import './styling/app.css';
 
@@ -15,6 +16,9 @@ function App() {
       <Home />
       </div>
       <Week/>
+    </div>
+    <div>
+    <WeatherMaps/>
     </div>
     </div>
        

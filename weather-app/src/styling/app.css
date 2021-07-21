@@ -2,6 +2,7 @@ body{
     overflow-x: hidden; /* Hide horizontal scrollbar */
     height: 100%;
     background-color: #1b1b1c;
+    font-family: 'Poppins', sans-serif;
 }
 
 .container { 
