@@ -1,26 +1,28 @@
 import React from 'react';
 import Home from './components/Home';
 import Week from './components/Week';
-import Navbar from './components/Navbar'
 import WeatherMaps from './components/WeatherMaps';
-
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
-
+import video from './media/home-bg.mp4';
+import './styling/app.css';
 
 function App() { 
   return (
-       <Router>
-         <Navbar />
-                <Switch>               
-                    <Route exact path="/" component={Home}/>
-                    <Route exact path="/week" component={Week}/>
-                    <Route exact path="/weathermaps" component={WeatherMaps}/>
-                </Switch>
-            </Router>
+    <div className="app">
+    <div className="container">
+      <video autoPlay loop muted>
+    <source src={video} type='video/mp4'/>
+    </video>
+    <div className="overlay">
+      <Home />
+      </div>
+      <Week/>
+    </div>
+    <div>
+    <WeatherMaps/>
+    </div>
+    </div>
+       
+     
   );
 }
 

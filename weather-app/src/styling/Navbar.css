@@ -1,23 +1,8 @@
-.navbar{
-    color: white;
-    font-size: 25px;
-    z-index: 2;
-    position: absolute;
-    width: 100%;
-    padding-top: 1%;
-}
 
-a{
-    text-decoration: none;
-    color:white;
-}
-
-ul{
-    list-style-type: none;
-}
-
-li{
-    display: inline;
-    padding-left: 20%;
-    
+.navbar h2{
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 40px 100px;
+    font-family: 'Poppins', sans-serif;
 }

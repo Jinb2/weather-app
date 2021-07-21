@@ -6,8 +6,6 @@ const Clock = () => {
 
     //set time every seccond
     useEffect(() => {
-    console.log("the time" + time);
-
     const interval = setInterval(() => { setTime(new Date().toLocaleTimeString());}
     ,1000);
 

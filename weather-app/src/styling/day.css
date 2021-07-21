@@ -1,0 +1,36 @@
+.week{
+    color:white;
+    font-family: 'Poppins', sans-serif;
+    height: 100%;
+    width: 100%;
+}   
+
+h3{
+    padding-top: 5%;
+    padding-left: 43%;
+    text-align: left;
+    font-size: 28px;
+}
+
+h4{
+    padding-top: 25%;
+    font-size: 25px;
+}
+
+.grid-container{
+    display: flex;
+    width: 100%;
+    height: 75vh;
+}
+
+.grid-item{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height: 480px;
+    width: 260px;
+    top: 15vh;
+}
+
+.status{
+    text-align: center;
+    font-size: 18px;
+}
